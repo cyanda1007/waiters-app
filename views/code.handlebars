@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="topnav">
+  <a  href="/">Home</a>
+  <a class="active" href="/login">Waiter</a>
+  <a href="/admin">Admin</a>
+  {{!-- <a href="#about">About</a> --}}
+</div>
+    <h1>Shift Scheduler login</h1>
+
+    <div class="logina">
+        <H3>Sign-In Page</H3>
+        <div class="errormsg">
+            {{messages.errormsg}}
+        </div>
+        <div class="succescode">
+            {{messages.succescode}}
+        </div>
+        <br>
+        <form action="/login" method="post">
+            <input type="text" name="code" value="" placeholder="Authentification code"><br><br>
+
+            <button class="logBtn" type="submit">Login</button></a>
+                       <br> <br>If not registered click Sign-Up below<br><br>
+        </form>
+        <a href="/"><button class="logBtn">Sign-up</button></a>
+    </div>
+
+    <script>
+  setTimeout(function () {
+      document.querySelector(".errormsg").innerHTML = ""
+    }, 6000);
+    </script>
+
+</body>
+
+</html>

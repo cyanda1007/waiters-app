@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Weekly Schedule</title>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="/">Home</a>
+  <a href="/login">Waiter</a>
+  <a class="active" href="/admin">Admin</a>
+  {{!-- <a href="#about">About</a> --}}
+</div>
+
+    <title>Weekly Schedule</title>
+
+
+    <ul id="colorcode">
+        <li>
+            <div class="greencolorcode">
+                <h4>Enough waiters for the day
+                </h4>
+            </div>
+        </li>
+        <li>
+            <div class="yellowcolorcode">
+                <h4>More waiters are needed for the day
+                </h4>
+
+            </div>
+        </li>
+        <li>
+            <div class="redcolorcode">
+                <h4>over subscribed Day
+                </h4>
+
+            </div>
+        </li>
+
+    </ul>
+
+        <div class='schedule'>
+
+            <table class="useExpense" border="1">
+                <tr class="weekdaylist">
+                    {{#each colorChange}}
+                    <th class="{{this.state}} workday">{{this.weekday}}</th>
+                    {{/each}}
+                </tr>
+
+                <tr class="daylist">
+                    <td>
+                        {{#each monday}}
+                        {{username}}
+                        <br>
+
+                        {{/each}}
+                    </td>
+                    <td>
+                        {{#each tuesday}}
+                        {{username}}
+                        <br>
+                        {{/each}}
+                    </td>
+                    <td>{{#each wednesday}}
+                        {{username}}
+                        <br>
+                        {{/each}}
+
+                    </td>
+                    <td>{{#each thursday}}
+                        {{username}}
+                        <br>
+
+                        {{/each}}
+                    </td>
+                    <td>{{#each thursday}}
+                        {{username}}
+                        {{/each}}
+                        <br>
+                    </td>
+                    <td>{{#each friday}}
+                        {{username}}
+                        <br>
+
+                        {{/each}}
+                    </td>
+                    <td>{{#each saturday}}
+                        {{username}}
+                        <br>
+
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+
+            <a href="/delete"><button type="submit" class="logBtn">Reset schedule</button></a>
+            <br>
+            <br>
+            <br>
+            <a href="/"><button type="submit" class="logBtn">Home</button></a>
+<br>
+<br>
+<br>
+            <div class="succesmsg">
+                <h4>{{messages.succesmsg}}</h4>
+                
+            </div>
+        </div>
+    <script>
+  setTimeout(function () {
+      document.querySelector(".succesmsg").innerHTML = ""
+    }, 5000);
+    </script>
+</body>
+
+</html>

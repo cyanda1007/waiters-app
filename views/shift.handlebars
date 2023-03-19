@@ -1,0 +1,67 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>schedule</title>
+  </head>
+
+  <body>
+
+    <h1>schedule</h1>
+
+    <div class="loginsection">
+      <form action="/waiters/{{user}}" method="post">
+        <h3>{{output}}</h3>
+
+        {{#each week}}
+          <label class="days" for="">{{this.workday}}
+
+            <input
+              type="checkbox"
+              value="{{this.workday}}"
+              {{this.status}}
+              name="day"
+            />
+          </label>
+        {{/each}}
+
+        <br />
+        <br />
+        <a href="/week"><button type="submit" class="logBtn">submit</button></a>
+
+      </form>
+      <br />
+
+      <a href="/"><button type="submit" class="logBtn">Home</button></a>
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="success">
+      {{messages.success}}
+    </div>
+    <br />
+
+    <div class="errormsg">
+      {{messages.errormsg}}
+    </div>
+    <br />
+
+    <script>
+      setTimeout(function () { document.querySelector(".success").innerHTML = ""
+      }, 5000);
+    </script>
+
+    <script>
+      setTimeout(function () { document.querySelector(".errormsg").innerHTML =
+      "" }, 5000);
+    </script>
+
+  </body>
+
+</html>
