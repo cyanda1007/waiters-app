@@ -1,0 +1,57 @@
+<div class="main-container">
+    <div class="main-wrapper">
+        <h2 class="title">Waiter's Schedule</h2>
+        <label class="errors error">{{error}}</label>
+        <label class="errors success">{{success}}</label>
+        <form action="/waiter/{{username}}" method="POST">
+            <p class="username">{{username}}</p>
+            <div class="bottom-container">
+                <div class="days-title">Select Days Available:
+                </div>
+                <div class="waiter-days">
+                    {{#days_available}}
+                    <p>{{#each this}}
+                        {{this.day}}
+                        {{/each}}
+                    </p>
+                </div>
+                {{/days_available}}
+                <div class="radio-selectors">
+                    <div class="days">
+                        {{#each days}}
+                        <div class="checkbox-container">
+                            <div class="days-name">{{day}}</div>
+                            <div class="checkbox-items">
+                                <input name='day' type="checkbox" class='check' value="{{id}}" {{separator day}}><span
+                                    class="checkmark"></span></input>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="buttons logout schedule-btns">
+                    <div>
+                        <button title="Schedule your days" type="submit" class="days-button user-btn exists">
+                            Submit
+                        </button>
+                    </div>
+                    <a href="/">
+                        <div title="Sign Out" class="days-button user-btn exits">
+                            Sign Out
+                        </div>
+                    </a>
+        </form>
+    </div>
+    <form action="/schedule/clear_days/{{username}}" method="POST">
+        <div class="buttons logout schedule-btns">
+            <div>
+                <button title="Schedule your days" type="submit" class="days-button user-btn exists">
+                    Reset Days
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>

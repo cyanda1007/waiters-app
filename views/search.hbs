@@ -1,0 +1,39 @@
+<div class="main-container">
+    <div class="main-wrapper">
+        <p class="title">Search</p>
+        <div class="table-container">
+            <table>
+                <colgroup>
+                    <col span="6" style="">
+                    <col span="8" style="background-color: pink">
+                </colgroup>
+                <tr>
+                    {{#each weekDays}}
+                    <th>{{day}}</th>
+                    {{/each}}
+                </tr>
+                <tr>
+                    {{#days}}
+                    <td>{{#each this}}
+                        {{this.name}}
+                        {{/each}}
+                    </td>
+                    {{/days}}
+                </tr>
+            </table>
+        </div>
+        <div class="bottom-container">
+            Waiters
+            {{#allWaiters}}
+            <ul class="list">
+                <a href="/waiter/{{name}}">
+                    <li class="list-item">
+                        <p>{{name}}</p>
+                    </li>
+                </a>
+            </ul>
+            {{/allWaiters}}
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="main-container">
+    <div class="main-wrapper">
+        <div class="title">Weekly Schedule</div>
+        <div class="schedule-days-container">
+            {{#each days}}
+            <div class="user">
+                <span class="day {{separator this}}">{{@key}}
+                </span>
+                <span class="{{separator this}} users ">
+                    {{#each .}}
+                    {{this}}
+                    {{/each}}
+                </span>
+            </div>
+            {{/each}}
+        </div>
+        <div class="instructions">
+            <p class="color">Over Scheduled<span class="red"></span></p>
+            <p class="color">Fully Scheduled<span class="green"></span></p>
+            <p class="color">Not Fully Scheduled/NA<span class="yellow"></span></p>
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="/waiters">
+            <button class="days-button user-btn schedule-days-btn">
+                Schedule Days
+            </button>
+        </a>
+    </div>
+</div>

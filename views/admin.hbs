@@ -1,0 +1,48 @@
+<div class="main-container">
+    <div class="main-wrapper">
+        <label class="errors error">{{error}}</label>
+        <label class="errors success">{{success}}</label>
+        <h2 class="title">Waiters Available</h2>
+        {{#each days}}
+        <div class="user">
+            <span class="day {{separator this}}">{{@key}}
+                <span class="users ">
+                    {{#each .}}
+                    {{this}}
+                    {{/each}}
+                </span>
+            </span>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="buttons admin-buttons">
+    <div class="inner-buttons">
+        <form action="reset" method="POST">
+            <button type="submit" class="days-button reset-waiters">
+                Reset Schedule
+            </button>
+        </form>
+        <form action="add-waiter" method="GET">
+            <button type="submit" class="days-button schedule-days-btn">
+                Add Waiter
+            </button>
+        </form>
+        <form action="delete" method="POST">
+            <button type="submit" class="days-button delete-waiter">
+                Delete Waiters
+            </button>
+        </form>
+        <a href="/waiters">
+            <button class="days-button delete-waiter">
+                All Waiters
+            </button>
+        </a>
+    </div>
+    <div class="instructions">
+        <p class="color">Over Scheduled<span class="red"></span></p>
+        <p class="color">Fully Scheduled<span class="green"></span></p>
+        <p class="color">Not Fully Scheduled/NA<span class="yellow"></span></p>
+    </div>
+</div>
+</div>

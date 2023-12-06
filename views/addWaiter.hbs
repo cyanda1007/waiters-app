@@ -1,0 +1,19 @@
+<div class="main-container">
+    <div class="main-wrapper">
+        <img src="/img/waiter8.png" class="signin-image" />
+        <h2 class="title">Add Waiter</h2>
+        <div class="bottom-wrapper">
+            <form action='/add-waiter' method="POST">
+                <div>
+                    <label class="errors error">{{error}}</label>
+                    <label class="errors success">{{success}}</label>
+                    <p class="name-label">Name:</p>
+                    <input class='name' type="text" name='name' placeholder="Enter waiter name" value="" />
+                </div>
+                <button type="submit" class="days-button">
+                    Create
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

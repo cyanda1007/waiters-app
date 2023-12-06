@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@200&family=Source+Code+Pro&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans',
+        sans-serif !important;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 20px;
+    height: 130px;
+    z-index: 9999;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.signin-image{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-width: 600px;
+}
+
+.search-input {
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+.search-input::placeholder {
+    color: #323330;
+    font-size: 16px;
+}
+
+.search-input:focus {
+    outline: none;
+    border: none;
+}
+
+.errors {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
+.error {
+    color: red;
+    margin-left: 18px;
+}
+
+.success {
+    color: green;
+    margin-left: 18px;
+}
+
+
+.hide {
+    display: none;
+}
+
+.name {
+    display: flex;
+    font-size: 14px;
+    background-color: transparent;
+    padding: 15px;
+    outline: none;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-bottom: .2px solid #323330;
+}
+
+.name-label {
+    color: rgb(63, 63, 63);
+    margin: 10px 0 10px 15px;
+}
+
+.days-title {
+    margin: 10px 20px;
+}
+
+.buttons {
+    background-color: transparent;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 5px; */
+}
+
+.admin-buttons {
+    border-top: .2px solid  #323330;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.days-button {
+    font-weight: bold;
+    color:  #323330;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #323330;
+    transition: .2s ease;
+    min-width: 150px;
+    margin: 10px;
+}
+
+.days-button:hover {
+    background-color:  #323330;
+    color: white;
+}
+
+.user-btn {
+    width: 100%;
+    background-color: transparent;
+    opacity: .8;
+}
+
+.user-btn:hover {
+    opacity: 1;
+}
+
+.radio-selectors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    transition: .3s ease;
+}
+
+.checkbox-container:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.checkbox-items {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.days-name {
+    font-size: 16px;
+}
+
+.days {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkbox-items input[type="checkbox"]:not(:checked),
+.checkbox-items input[type="checkbox"]:checked {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+.checkbox-items input[type="checkbox"]:not(:checked):before,
+.checkbox-items input[type="checkbox"]:checked:before {
+    content: '';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+    border-radius: 20%;
+    background-color: #323330;
+    outline: none;
+}
+
+.checkbox-items input[type="checkbox"]:not(:checked):after,
+.checkbox-items input[type="checkbox"]:checked:after {
+    content: '✔';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    font-size: 24px;
+    /* background-color: #5cf1b3; */
+    line-height: 0.8;
+    background-color: rgb(242, 177, 65);
+    color: rgb(134, 22, 22);
+    transition: all .2s;
+}
+
+.checkbox-items input[type="checkbox"]:not(:checked):after {
+    opacity: 0;
+    transform: scale(0);
+    background-color: #5cf1b3;
+}
+
+.checkbox-items input[type="checkbox"]:checked:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.back-button {
+    margin: 0 10px;
+    /* width: 100px; */
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p.color {
+    display: flex;
+    font-size: 11px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.instructions > .color {
+    color: #1b1b1b;
+        margin: 0 20px;
+}
+
+.color > span {
+    margin: 0 5px;
+}
+
+.green, .purple, .yellow, .red{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+.green {
+    background: green;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.red {
+    background: red;
+}
+.purple {
+    background: purple;
+}
+
+.colors {
+    color: rgb(40, 40, 40);
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    width: 70px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+
+footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+    font-weight: bolder;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    padding: 10px 30px;
+}
+
+footer p {
+    font-size: 15px;
+    color: #323330;
+    padding: 15px 10px;
+    border-radius: 15px;
+}
+
+.bottom-container {
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.list {
+    display: flex;
+    align-items: center
+}
+
+.list-item {
+    color: black;
+    border-bottom: 1px solid #323330;
+    padding: 10px;
+    transition: .2s ease;
+}
+
+.list-item:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.list-users {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.list-names {
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    background-color: #323330;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.list-names:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.bottom-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.submit {
+    width: 100px;
+    padding: 15px;
+    color: white;
+    border-color: white;
+    align-self: flex-end;
+    place-self: end;
+    justify-self: flex-end;
+}
+
+.title {
+    font-size: 50px;
+    color: #272727;
+    border-bottom: .2px solid #323330;
+    padding-bottom: 20px;
+}
+
+.subtitle {
+    margin: 10px;
+}
+
+.waiter-name-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.waiter-name {
+    font-weight: bold;
+}
+
+.delete-waiter:hover {
+    opacity: 1;
+    color: white;
+    background-color: red;
+    border: .2px solid red;
+}
+
+.schedule-days-btn, .reset-waiters, .delete-waiter {
+    color: white;
+    cursor: pointer;
+    background-color:  #323330;
+    padding: 5px 10px;
+    border-radius: 5px;
+    /* opacity: .6; */
+    transition: .2s ease;
+    border: .2px solid  #323330;
+    align-self: center;
+}
+
+.schedule-days-btn:hover {
+    opacity: 1;
+    color: white;
+    background-color: green;
+    border: .2px solid green;
+}
+
+.reset-waiters:hover {
+    opacity: 1;
+    color: white;
+    background-color: purple;
+    border: .2px solid purple;
+}
+
+.waiter-days {
+    margin: 0 16px;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0db4f;
+    /* border-bottom: .2px solid rgb(53, 53, 53); */
+}
+
+.users {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+span.users {
+    font-size: 16px;
+    font-weight: normal;
+    padding: 5px;
+}
+
+span.day {
+    font-size: 16px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.green_day,
+.yellow_day,
+.red_day,
+.purple_day {
+    width: 110px;
+    color: rgb(238, 238, 238);
+    border-bottom: .2px solid black;
+}
+
+.green_day {
+    background: green;
+}
+
+.yellow_day {
+    color: black;
+    background: #f0db4f;
+}
+
+.red_day {
+    background: red;
+}
+
+.purple_day {
+    background: purple;
+}
+
+.logout {
+    /* position: absolute; */
+    width: min-content;
+    text-align: center;
+}
+
+.exits{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.schedule-btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: start;
+}
+
+.schedule{
+    color: #323330;
+}
+
+@Media only screen and (max-width: 800px){
+    .radio-selectors {
+      flex-direction: column;
+      align-self: flex-start;
+      justify-self: flex-start;
+      place-self: start;
+    }
+.title {
+    font-size: 35px;
+}
+    .days {
+        flex-direction: column;
+    }
+}

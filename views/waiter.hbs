@@ -1,0 +1,36 @@
+<div class="main-container">
+    <div class="wrapper">
+        <div class="title">Waiter Available</div>
+        <p class="subtitle">Days Available</p>
+        <form action='/deleteuser/{{waiter.name}}' method="POST">
+            <div class="waiter-name-container">
+                <p title='{{waiter.name}}' class="waiter-name">{{waiter.name}}</p>
+                <button title='Delete {{waiter.name}}' type='submit' class="delete-waiter">Delete</p>
+            </div>
+        </form>
+        <span class="subtitle">{{noDays}}</span>
+        <div class="waiter-days">
+            {{#days_available}}
+            <p>{{#each this}}
+                {{this.day}}
+                {{/each}}
+            </p>
+        </div>
+        {{/days_available}}
+        <div class="buttons logout">
+            <div>
+                <a class="schedule" href="/schedule/{{waiter.name}}">
+                    <button type="submit" class="days-button user-btn exists">
+                        {{scheduleBtn}}
+                    </button>
+                </a>
+            </div>
+            <a href="/">
+                <div title="Sign Out" class="days-button user-btn exits">
+                    Sign Out
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="main-container">
+    <div class="main-wrapper">
+        <div class="title">Waiters</div>
+        <div class="bottom-container">
+            Waiters
+            {{#waiters}}
+            <ul class="list">
+                <a href="/waiter/{{name}}">
+                    <li class="list-item">
+                        {{name}}
+                    </li>
+                </a>
+            </ul>
+            {{/waiters}}
+        </div>
+    </div>
+</div>
